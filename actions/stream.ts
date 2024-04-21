@@ -15,11 +15,12 @@ export const updateStream = async (values: Partial<Stream>) => {
             },
         });
 
-        if(!selfStream) {
+        if (!selfStream) {
             throw new Error("Stream not found");
         }
 
-        const validData= {
+        const validData = {
+            thumbnailUrl: values.thumbnailUrl,
             name: values.name,
             isChatEnabled: values.isChatEnabled,
             isChatFollowerOnly: values.isChatFollowerOnly,
@@ -29,7 +30,7 @@ export const updateStream = async (values: Partial<Stream>) => {
         const stream = await db.stream.update({
             where: {
                 id: selfStream.id,
-            }, 
+            },
             data: {
                 ...validData,
             }
