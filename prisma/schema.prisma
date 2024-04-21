@@ -23,7 +23,7 @@ model User {
   bio String? @db.Text
 
   following Follow[] @relation("Following")
-  followdBy Follow[] @relation("FollowedBy")
+  followedBy Follow[] @relation("FollowedBy")
 
   blocking Block[] @relation("Blocking")
   blockedBy Block[] @relation("BlockedBy")
