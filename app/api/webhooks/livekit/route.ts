@@ -28,6 +28,8 @@ export async function POST(req: Request) {
                 isLive: true,
             },
         });
+
+        return new Response("The user went Online with updated keys", { status: 201 });
     }
 
     if(event.event === "ingress_ended") {
@@ -39,5 +41,9 @@ export async function POST(req: Request) {
                 isLive: false,
             },
         });
+
+        return new Response("The user went Offline", { status: 202 });
     }
+
+    return new Response("The user accessing streaming keys", { status: 203 });
 }
