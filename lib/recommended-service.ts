@@ -26,7 +26,7 @@ export const getRecommended = async () => {
                     },
                     {
                         NOT: {
-                            followdBy: {
+                            followedBy: {
                                 some: {
                                     followerId: userId,
                                 },
