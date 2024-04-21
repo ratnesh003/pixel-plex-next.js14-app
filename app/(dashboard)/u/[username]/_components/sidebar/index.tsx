@@ -3,10 +3,10 @@ import { Toggle } from "./toggle";
 import { Wrapper } from "./wrapper";
 
 export const Sidebar = () => {
-    return (
-        <Wrapper>
-            <Toggle />
-            <Navigation />
-        </Wrapper>
-    );
+  return (
+    <Wrapper>
+      <Toggle />
+      <Navigation />
+    </Wrapper>
+  );
 };

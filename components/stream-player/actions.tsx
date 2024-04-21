@@ -12,69 +12,70 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { onFollow, onUnfollow } from "@/actions/follow";
 
 interface ActionsProps {
-    isFollowing: boolean;
-    hostIdentity: string;
-    isHost: boolean;
+  isFollowing: boolean;
+  hostIdentity: string;
+  isHost: boolean;
 }
 
 export const Actions = ({
-    isFollowing,
-    hostIdentity,
-    isHost,
+  isFollowing,
+  hostIdentity,
+  isHost,
 }: ActionsProps) => {
-    const [isPending, startTransition] = useTransition();
-    const router = useRouter();
-    const { userId } = useAuth();
+  const [isPending, startTransition] = useTransition();
+  const router = useRouter();
+  const { userId } = useAuth();
 
-    const handleFollow = () => {
-        startTransition(() => {
-            onFollow(hostIdentity)
-            .then((data) => toast.success(`You are following ${data.following.username}`))
-            .catch(() => toast.error("something went wrong"));
-        });
-    };
+  const handleFollow = () => {
+    startTransition(() => {
+      onFollow(hostIdentity)
+        .then((data) =>
+          toast.success(`You are following ${data.following.username}`)
+        )
+        .catch(() => toast.error("something went wrong"));
+    });
+  };
 
-    const handleUnfollow = () => {
-        startTransition(() => {
-            onUnfollow(hostIdentity)
-            .then((data) => toast.success(`You unfollowed ${data.following.username}`))
-            .catch(() => toast.error("something went wrong"));
-        });
-    };
+  const handleUnfollow = () => {
+    startTransition(() => {
+      onUnfollow(hostIdentity)
+        .then((data) =>
+          toast.success(`You unfollowed ${data.following.username}`)
+        )
+        .catch(() => toast.error("something went wrong"));
+    });
+  };
 
-    const toggleFollow = () => {
-        if(!userId) {
-            return router.push("/sign-in");
-        }
-
-        if(isHost) return;
-
-        if(isFollowing) {
-            handleUnfollow();
-        } else {
-            handleFollow();
-        }
+  const toggleFollow = () => {
+    if (!userId) {
+      return router.push("/sign-in");
     }
 
-    return (
-        <Button
-        disabled={isPending || isHost}
-            onClick={toggleFollow}
-            variant="primary"
-            size="sm"
-            className="w-full lg:w-auto"
-        >
-            <Heart className={cn(
-                "h-4 w-4 mr-2",
-                isFollowing ? "fill-white" : "fill-none"
-            )} />
-            {isFollowing ? "Unfollow" : "Follow"}
-        </Button>
-    );
+    if (isHost) return;
+
+    if (isFollowing) {
+      handleUnfollow();
+    } else {
+      handleFollow();
+    }
+  };
+
+  return (
+    <Button
+      disabled={isPending || isHost}
+      onClick={toggleFollow}
+      variant="primary"
+      size="sm"
+      className="w-full lg:w-auto"
+    >
+      <Heart
+        className={cn("h-4 w-4 mr-2", isFollowing ? "fill-white" : "fill-none")}
+      />
+      {isFollowing ? "Unfollow" : "Follow"}
+    </Button>
+  );
 };
 
 export const ActionsSkeleton = () => {
-    return (
-        <Skeleton className="h-10 w-full lg:w-24" />
-    );
+  return <Skeleton className="h-10 w-full lg:w-24" />;
 };
