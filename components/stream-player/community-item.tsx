@@ -30,7 +30,7 @@ export const CommunityItem = ({
   const isHost = viewerName === hostName;
 
   const handleBlock = () => {
-    if (!participantName || self || !isHost) return;
+    if (!participantName || isSelf || !isHost) return;
 
     startTransition(() => {
       onBlock(participantIdentity)
