@@ -2,6 +2,8 @@
 
 Welcome to Pixel Plex, the web app designed for streaming enthusiasts and viewers alike. Our platform offers a user-friendly interface for seamless streaming and live stream viewing. Whether you're a content creator or a passionate viewer, Pixel Plex provides an intuitive experience to enjoy live streams effortlessly.
 
+![thumbnail](</public/thumbnail.png>)
+
 ### Key Features :
 - 📡 Streaming using RTMP / WHIP protocols 
 - 🌐 Generating ingress
