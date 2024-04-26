@@ -18,11 +18,11 @@ export const useViewerToken = (hostIdentity: string) => {
                 const name = decodedToken?.name;
                 const identity = decodedToken.jti;
 
-                if(identity) {
+                if (identity) {
                     setIdentity(identity);
                 }
 
-                if(name) {
+                if (name) {
                     setName(name);
                 }
             } catch {
@@ -35,7 +35,7 @@ export const useViewerToken = (hostIdentity: string) => {
 
     return {
         token,
-        name, 
+        name,
         identity,
     }
 }
