@@ -7,6 +7,8 @@ export default authMiddleware({
   publicRoutes: [
     '/',
     '/api/webhooks(.*)',
+    '/api/webhooks/clerk',
+    '/api/webhooks/livekit',
     '/api/uploadthing',
     '/:username',
     '/search'
