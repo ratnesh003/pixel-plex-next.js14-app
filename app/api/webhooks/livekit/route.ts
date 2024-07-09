@@ -1,4 +1,4 @@
-"use server";
+"use client";
 
 import { headers } from "next/headers";
 import { WebhookReceiver } from "livekit-server-sdk";

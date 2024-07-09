@@ -1,4 +1,4 @@
-"use server";
+"use client";
 
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
