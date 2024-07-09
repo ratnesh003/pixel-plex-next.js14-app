@@ -86,5 +86,5 @@ export async function POST(req: Request) {
             },
         })
     }
-    return new Response('', { status: 200 })
+    return new Response('The user data at the clerk is updated successfully', { status: 200 })
 }
