@@ -1,4 +1,5 @@
-import { UserButton } from "@clerk/nextjs";
+"use client";
+
 import { ResultsSkeleton, Results } from "./_components/results";
 import { Suspense } from "react";
 
