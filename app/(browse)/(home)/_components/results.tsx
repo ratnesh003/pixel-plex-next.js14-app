@@ -1,3 +1,5 @@
+"use client";
+
 import { getStream } from "@/lib/feed-service";
 
 import { ResultCard, ResultCardSkeleton } from "./result-card";

@@ -1,7 +1,7 @@
 "use client";
 
 import { ResultsSkeleton, Results } from "./_components/results";
-import { Suspense } from "react";
+import React, { Suspense } from "react";
 
 export default function Home() {
   return (
