@@ -20,7 +20,7 @@ type CustomStream = {
   id: string;
   isChatEnabled: boolean;
   isChatDelayed: boolean;
-  isChatFollowersOnly: boolean;
+  isChatFollowerOnly: boolean;
   isLive: boolean;
   thumbnailUrl: string | null;
   name: string;
@@ -101,7 +101,7 @@ export const StreamPlayer = ({
             isFollowing={isFollowing}
             isChatEnabled={stream.isChatEnabled}
             isChatDelayed={stream.isChatDelayed}
-            isChatFollowersOnly={stream.isChatFollowersOnly}
+            isChatFollowersOnly={stream.isChatFollowerOnly}
           />
         </div>
       </LiveKitRoom>
